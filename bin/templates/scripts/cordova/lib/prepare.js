@@ -368,7 +368,7 @@ function getOrientationValue(platformConfig) {
     orientation = orientation.toLowerCase();
 
     // Check if the given global orientation is supported
-    if (['default', 'portrait','landscape', 'all'].indexOf(orientation) >= 0) {
+    if (['default', 'portrait','landscape', 'all', 'custom'].indexOf(orientation) >= 0) {
         return orientation;
     }
 
