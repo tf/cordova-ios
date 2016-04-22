@@ -218,6 +218,11 @@ function handleOrientationSettings(platformConfig, infoPlist) {
             infoPlist['UISupportedInterfaceOrientations'] = [ 'UIInterfaceOrientationPortrait', 'UIInterfaceOrientationPortraitUpsideDown', 'UIInterfaceOrientationLandscapeLeft', 'UIInterfaceOrientationLandscapeRight' ];
             infoPlist['UISupportedInterfaceOrientations~ipad'] = [ 'UIInterfaceOrientationPortrait', 'UIInterfaceOrientationPortraitUpsideDown', 'UIInterfaceOrientationLandscapeLeft', 'UIInterfaceOrientationLandscapeRight' ];
             break;
+        case 'custom':
+            infoPlist['UIInterfaceOrientation'] = [ 'UIInterfaceOrientationPortrait' ];
+            delete infoPlist['UISupportedInterfaceOrientations'];
+            infoPlist['UISupportedInterfaceOrientations~ipad'] = [ 'UIInterfaceOrientationPortrait', 'UIInterfaceOrientationPortraitUpsideDown', 'UIInterfaceOrientationLandscapeLeft', 'UIInterfaceOrientationLandscapeRight' ];
+            break;
         default:
             delete infoPlist['UISupportedInterfaceOrientations'];
             delete infoPlist['UISupportedInterfaceOrientations~ipad'];
